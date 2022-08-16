@@ -1,5 +1,26 @@
 import styled, { keyframes } from 'styled-components'
 
+const outOfWall = keyframes`
+   0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+`
+const moveAndRotataX = keyframes`
+   0% {
+    transform: perspective(600px) rotateX(-180deg) translateY(100%);
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform :translateY(0%);
+    transform: perspective(600px);
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+  }
+`
+
 const moveToRight = keyframes`
  0% {
     left: 50%;
@@ -20,7 +41,6 @@ const moveToLeft = keyframes`
  0% {
     right: 50%;
     transform: rotate(0deg);
-    transform: scale(1);
     top: 0%;
   }
 
@@ -134,13 +154,47 @@ export const SphereRight = styled.div`
   animation: ${(props) => (props.onanimation ? moveToRight : 'none')} 7s linear
     forwards;
 `
-
-export const CircuitBackground = styled.div`
+export const NavSection = styled.nav`
+  position: absolute;
   top: 0px;
   left: 0px;
-  position: absolute;
-
   width: 100%;
-  height: 100%;
-  z-index: 2;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  display: flex;
+  flex-grow: 5px;
+  justify-content: space-between;
+`
+export const ListNav = styled.ul`
+  background-color: rgba(200, 100, 100, 1);
+  padding: 0px 5px;
+  transform: translateX(200%);
+  background-image: radial-gradient(rgba(2, 0, 36, 0.2) 2px, transparent 1px);
+  background-position: 5px, 5px;
+  background-size: 5px 5px;
+  border: 1px solid black;
+
+  animation: ${(props) => (props.onanimation ? outOfWall : 'none')} 5s linear
+    forwards;
+  & i {
+    animation: ${(props) => (props.onanimation ? moveAndRotataX : 'none')} 5s
+      linear forwards;
+  }
+`
+
+export const ItemNav = styled.i`
+  list-style: none;
+  display: inline-block;
+  backface-visibility: hidden;
+  margin: 10px 20px -30px 20px;
+  padding: 2px 5px;
+  border-radius: 5%;
+  border: 1px solid black;
+  background-color: #eed09d;
+  background-image: radial-gradient(rgba(2, 0, 36, 0.2) 1px, transparent 1px);
+  background-position: 0 0, 10px 10px;
+  background-size: 5px 5px;
+  position: relative;
+  z-index: 11;
+  transform: perspective(600px) rotateX(-180deg) translateY(100%);
 `

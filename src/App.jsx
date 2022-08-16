@@ -1,12 +1,17 @@
 import { useProgress } from '@react-three/drei'
-import { DivEffect,SceneDiv, SphereLeft, SphereRight, CircuitBackground } from './Styled'
+import { DivEffect,SceneDiv, SphereLeft, SphereRight, NavSection, ListNav, ItemNav } from './Styled'
 import './App.css'
 import  Scene  from './components/Scene'
 
 function App(){
   const { progress, total, loaded } = useProgress()
 
-  return (<div className='container'>
+  return (<>
+  <NavSection
+  
+  ><ListNav
+  onanimation={Boolean(total === loaded)}
+  ><ItemNav>Social media</ItemNav><ItemNav>About me</ItemNav><ItemNav>projects</ItemNav></ListNav></NavSection> <div className='container'>
 
     <SceneDiv onanimation={Boolean(total === loaded)}>
       <Scene/>
@@ -23,10 +28,8 @@ function App(){
         <h1> Loadin :{progress.toString().slice(0, 5)}%</h1>
       )}
     </SphereLeft >
-    <CircuitBackground>
 
-    </CircuitBackground>
-  </div>)
+  </div></>)
 }
 
 export default App
