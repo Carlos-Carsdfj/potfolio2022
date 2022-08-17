@@ -4,12 +4,13 @@ import { useProgress, OrbitControls, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 import Camera from './Camera'
 import  Lights  from './Lights'
-import RoomsModel from './RoomsModel'
+import RoomsModel from './RoomsModel2'
 const Scene = () => {
   const { progress, total, loaded } = useProgress()
   return (<>
     
       <Canvas
+
       gl={{
         antialias: true,
         toneMappingExposure: 1.5,
