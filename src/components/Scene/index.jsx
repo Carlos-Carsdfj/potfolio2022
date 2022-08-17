@@ -4,7 +4,7 @@ import { useProgress, OrbitControls, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 import Camera from './Camera'
 import  Lights  from './Lights'
-import RoomsModel from './RoomsModel2'
+import RoomsModel from './RoomsModel'
 const Scene = () => {
   const { progress, total, loaded } = useProgress()
   return (<>
