@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import {  useFrame } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import {  useFrame, useLoader } from '@react-three/fiber'
 
 export default  function Model(props) {
   const maingroup = useRef()
   useFrame((state, delta) => (maingroup.current.rotation.y += 0.005))
-  const { nodes, materials } = useGLTF('/models/rooms/rooms.glb')
+  const { nodes, materials } = useLoader(GLTFLoader ,'/models/rooms/rooms.glb')
   return (
     <group {...props}  ref={maingroup} dispose={null}>
       <group name="Armature" position={[1.88, 0.03, 2.36]} scale={0.1}>
