@@ -1,20 +1,33 @@
+import { useRef } from 'react'
+import useSize from './utils//useSize'
 import { useProgress } from '@react-three/drei'
 import { DivEffect,SceneDiv, SphereLeft, SphereRight, NavSection, ListNav, ItemNav } from './Styled'
 import './App.css'
 import  Scene  from './components/Scene'
 
 function App(){
+  const target = useRef(null)
+  const size = useSize(target)
   const { progress, total, loaded } = useProgress()
-
   return (<>
   <NavSection
   
-  ><ListNav
-  onanimation={Boolean(total === loaded)}
-  ><ItemNav>Social media</ItemNav><ItemNav>About me</ItemNav><ItemNav>projects</ItemNav></ListNav></NavSection> <div className='container'>
+    ><ListNav
+    onanimation={Boolean(total === loaded)}
+    >
+      <ItemNav>Social media</ItemNav>
+      <ItemNav>About me</ItemNav>
+      <ItemNav>projects</ItemNav>
+    </ListNav>
+  </NavSection>
+   <div className='container'>
 
-    <SceneDiv onanimation={Boolean(total === loaded)}>
-      <Scene/>
+    <SceneDiv 
+      ref={target}
+    onanimation={Boolean(total === loaded)}>
+      <Scene
+      screensize={size?.width > 600? 1 : 0.5 }
+      />
     </SceneDiv >
     <DivEffect onanimation={Boolean(total === loaded)}>l</DivEffect>
 

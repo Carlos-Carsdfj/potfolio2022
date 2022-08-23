@@ -7,7 +7,7 @@ export default  function Model(props) {
   useFrame((state, delta) => (maingroup.current.rotation.y += 0.005))
   const { nodes, materials } = useGLTF('/models/rooms/perfomance.glb')
   return (
-    <group {...props}  dispose={null}>
+    <group {...props}  dispose={null}   >
       <group name="Scene" ref={maingroup} >
         <group
           name="Sketchfab_model"
