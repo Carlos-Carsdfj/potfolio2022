@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {  useFrame, useLoader } from '@react-three/fiber'
+import * as THREE from 'three'
 
 export default function Model(props) {
   const maingroup = useRef()
@@ -1858,7 +1859,8 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.BaseFloor.geometry}
-        material={materials.floor}
+     
+        material={materials.floor} 
         position={[0.01579052, -0.40062413, 0.01752385]}
         scale={3.53889871}
       />

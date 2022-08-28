@@ -1,5 +1,6 @@
 :root {
   padding: 0;
+  margin: 0;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -13,41 +14,22 @@
   -webkit-text-size-adjust: 100%;
 }
 body {
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 21%, rgba(0,212,255,1) 100%);
+  overflow-x: scroll;
+  background: rgb(2,0,36);
+  background: linear-gradient(351deg, rgba(2,0,36,1) 5%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 .container{
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: transparent;
-
-  animation-name: example;
-  animation-duration: 4s;
-  
-  transition-property: clip-path;
-  transition-duration: 2s;
-  transition-timing-function: ease-in;
 }
 
-.effect{
-  height: 100%;
-  width: 100%;
-  background-color: transparent;
-  background-image: 
-  radial-gradient(rgba(2, 0, 36, 0.5) 5px, transparent 5px),
-  radial-gradient( rgba(2,0,36,0.5) 5px, transparent 5px);
-  background-position: 0 0, 10px 10px;
-  background-size: 20px 20px;
-  z-index: 1;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  clip-path: circle(20%);
- 
-}
+
 
 
 

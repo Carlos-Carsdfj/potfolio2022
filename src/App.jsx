@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import useSize from './utils//useSize'
 import { useProgress } from '@react-three/drei'
-import { DivEffect,SceneDiv, SphereLeft, SphereRight, NavSection, ListNav, ItemNav } from './Styled'
+import { DivEffect,SceneDiv, SphereLeft, SphereRight, NavSection, ListNav, ItemNav, ImageRender, Article } from './Styled'
 import './App.css'
 import  Scene  from './components/Scene'
 
@@ -20,7 +20,7 @@ function App(){
       <ItemNav>projects</ItemNav>
     </ListNav>
   </NavSection>
-   <div className='container'>
+   <section className='container'>
 
     <SceneDiv 
       ref={target}
@@ -42,7 +42,22 @@ function App(){
       )}
     </SphereLeft >
 
-  </div></>)
+  </section >
+  
+    {total === loaded ? <><span style={{height:'300px', display:'block'}}></span>
+  <section className='container'>
+  <Article>
+  <ImageRender src='/assets/render2.png' alt='Skills' ></ImageRender>
+  <p>
+        Esto y aquello puede ser lo otro pero si no lo es es un caos vavavavavavavava 
+  </p>
+  </Article>      
+
+  </section></>
+  : ''  
+}
+
+  </>)
 }
 
 export default App

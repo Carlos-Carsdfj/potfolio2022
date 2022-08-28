@@ -13,8 +13,8 @@ const Scene = ({screensize = 1}) => {
 
       gl={{
         antialias: true,
-        toneMappingExposure: 1.5,
-        toneMapping: THREE.ReinhardToneMapping,
+        toneMappingExposure: 0.5,
+        toneMapping: THREE.ACESFilmicToneMapping,
       }}
       >
     <Camera/>
@@ -24,7 +24,15 @@ const Scene = ({screensize = 1}) => {
       <RoomsModel  scale={screensize} position={[0,1,0]}/>
       <Environment files={'/hdr/brown_photostudio_02_2k.hdr'} />
     </Suspense>
-    <OrbitControls target={[0, 1, 0]} maxDistance={8} minDistance={3.5} maxPolarAngle={78*Math.PI /180} minPolarAngle={78*Math.PI /180} />
+    <OrbitControls target={[0, 1, 0]} enabled={true} mouseButtons={{
+	LEFT: THREE.MOUSE.ROTATE,
+	}
+} 
+touches={{
+	ONE: THREE.TOUCH.ROTATE,
+	TWO: THREE.TOUCH.DOLLY_ROTATE
+}}
+maxDistance={8} minDistance={5.7} maxPolarAngle={70*Math.PI /180} minPolarAngle={70*Math.PI /180} />
   </Canvas></>
   )
 }
