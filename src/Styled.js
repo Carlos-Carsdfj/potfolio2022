@@ -1,5 +1,42 @@
 import styled, { keyframes } from 'styled-components'
 
+export const DivLoader = styled.div`
+  position: absolute;
+  display: grid;
+  place-content: center;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+`
+export const Loader = styled.span`
+  display: ${(props) => (props.isLoader ? 'grid' : 'none')};
+  place-content: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  color: white;
+  z-index: 11;
+
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5),
+    inset 0 -40px 40px -20px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(#d48435 300px, transparent 0) no-repeat;
+  background-position: 0px ${(props) => (-300 / 100) * props.loader + 300}px;
+  transition: background-position 0.5s linear, display 5s linear;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 25%;
+    top: 20px;
+    left: 10px;
+    z-index: 11;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+  }
+`
 export const DivEffect = styled.div`
   height: 100%;
   width: 100%;
@@ -35,52 +72,14 @@ export const SceneDiv = styled.div`
   animation: ${(props) => (props.onanimation ? opacitytrans : 'none')} 5s linear
     forwards;
 `
-export const SphereLeft = styled.div`
-  position: absolute;
-  width: 500px;
-  height: 100%;
-  z-index: 10;
-  right: 50%;
-  top: 0px;
-  background-image: url('/assets/sphere-blue.png');
-  background-size: 500px;
-  background-repeat: no-repeat;
-  background-position: 250px;
-  animation: ${(props) => (props.onanimation ? moveToLeft : 'none')} 3s ease-in
-    forwards;
-  @media (max-width: 600px) {
-    width: 300px;
-    background-size: 300px;
-    background-position: 150px;
-  }
-`
-export const SphereRight = styled.div`
-  text-align: center;
-  position: absolute;
-  width: 500px;
-  height: 100%;
-  z-index: 10;
-  left: 50%;
-  top: 0%;
-  background-image: url('/assets/sphere-blue.png');
-  background-size: 500px;
-  background-repeat: no-repeat;
-  background-position: -250px;
-  animation: ${(props) => (props.onanimation ? moveToRight : 'none')} 3s ease-in
-    forwards;
-  @media (max-width: 600px) {
-    width: 300px;
-    background-size: 300px;
-    background-position: -150px;
-  }
-`
+
 export const NavSection = styled.nav`
   position: fixed;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
-  z-index: 11;
+  z-index: 10;
   overflow: hidden;
   @media (max-width: 960px) {
     justify-content: center;
@@ -94,6 +93,7 @@ export const NavSection = styled.nav`
 `
 
 export const ItemNav = styled.i`
+  color: white;
   text-align: center;
   list-style: none;
   display: inline-block;
@@ -102,10 +102,7 @@ export const ItemNav = styled.i`
   padding: 2px 5px;
   border-radius: 5%;
   border: 1px solid black;
-  background-color: #eed09d;
-  background-image: radial-gradient(rgba(2, 0, 36, 0.2) 1px, transparent 1px);
-  background-position: 0 0, 10px 10px;
-  background-size: 5px 5px;
+  background-color: #7373fb;
   position: relative;
   transform: perspective(600px) rotateX(-180deg) translateY(100%);
   @media (max-width: 400px) {
@@ -127,7 +124,7 @@ export const ListNav = styled.ul`
 `
 export const ImageRender = styled.img`
   width: auto;
-  height: 40rem;
+  height: 30rem;
   z-index: 4;
   padding: 0 0;
   object-fit: cover;
@@ -136,9 +133,10 @@ export const ImageRender = styled.img`
     width: 100%;
   }
 `
-export const Article = styled.article`
+export const Article1 = styled.article`
   text-align: center;
   color: white;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -171,26 +169,6 @@ const moveAndRotataX = keyframes`
     transform: perspective(600px);
     transform-origin: 100% 50%;
     transform-style: preserve-3d;
-  }
-`
-
-const moveToRight = keyframes`
- 0% {
-    left: 50%;
-    transform: scale(1);
-  }
-  100% {
-    left:100%;
-    opacity: 0;
-  }
-`
-const moveToLeft = keyframes`
- 0% {
-    right: 50%;
-  }
-  100% {
-    right:100%;
-    opacity: 0;
   }
 `
 
