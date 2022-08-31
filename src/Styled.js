@@ -21,7 +21,8 @@ export const Loader = styled.span`
   border-radius: 50%;
   box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5),
     inset 0 -40px 40px -20px rgba(255, 255, 255, 0.5);
-  background: linear-gradient(#d48435 300px, transparent 0) no-repeat;
+  background: linear-gradient(rgba(2, 0, 36, 0.5) 300px, transparent 0)
+    no-repeat;
   background-position: 0px ${(props) => (-300 / 100) * props.loader + 300}px;
   transition: background-position 0.5s linear, display 5s linear;
   &:before {
@@ -56,9 +57,8 @@ export const DivEffect = styled.div`
   opacity: 0;
   animation: ${(props) => (props.onanimation ? cicleSize : 'none')} 3s linear
     forwards;
-  animation-delay: 4s;
+  animation-delay: 2s;
 `
-
 export const SceneDiv = styled.div`
   height: 100vh;
   width: 80%;
@@ -69,11 +69,10 @@ export const SceneDiv = styled.div`
   opacity: 0;
   transition: opacity;
   transition-timing-function: ease;
-  animation: ${(props) => (props.onanimation ? opacitytrans : 'none')} 5s linear
+  animation: ${(props) => (props.onanimation ? opacitytrans : 'none')} 2s linear
     forwards;
 `
-
-export const NavSection = styled.nav`
+export const Nav = styled.nav`
   position: fixed;
   display: flex;
   flex-direction: row-reverse;
@@ -91,8 +90,8 @@ export const NavSection = styled.nav`
     top: 0px;
   }
 `
-
 export const ItemNav = styled.i`
+  position: relative;
   color: white;
   text-align: center;
   list-style: none;
@@ -104,16 +103,30 @@ export const ItemNav = styled.i`
   border: 1px solid black;
   background-color: #7373fb;
   position: relative;
+  & a {
+    text-decoration: none;
+    color: white;
+  }
   transform: perspective(600px) rotateX(-180deg) translateY(100%);
   @media (max-width: 400px) {
     margin: 10px 5px -30px 5px;
   }
 `
+export const Bg = styled.div`
+  position: absolute;
+  background: #7373fb;
+  filter: blur(10px);
+  width: 90%;
+  height: 80%;
+  top: 10%;
+  left: 5%;
+  background: blur;
+`
 export const ListNav = styled.ul`
-  background-color: #d48435;
+  background-color: #150f7a7d;
   padding: 0px 5px;
   transform: translateX(200%);
-  border: 1px solid black;
+  border: 1px solid #0000004d;
   border-radius: 3%;
   animation: ${(props) => (props.onanimation ? outOfWall : 'none')} 5s linear
     forwards;
@@ -133,21 +146,54 @@ export const ImageRender = styled.img`
     width: 100%;
   }
 `
-export const Article1 = styled.article`
+export const Article = styled.article`
+  display: grid;
+  place-content: center;
+  text-indent: 2rem;
+
   text-align: center;
   color: white;
   font-size: 1.5rem;
+  height: 100%;
+  padding: 0 30px;
+  @media (max-width: 960px) {
+    padding: 0 20px;
+  }
+  & strong {
+    position: relative;
+    color: #7c2ff8;
+    text-shadow: 0 0 30px #ffffffb2;
+  }
+  & p {
+    padding: 0 10px;
+  }
+`
+
+export const Article1 = styled(Article)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100%;
   @media (max-width: 960px) {
     padding: 0 20px;
     flex-direction: column;
     justify-content: center;
   }
 `
-
+export const Article2 = styled(Article)`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  & svg {
+    width: 4rem;
+    height: 4rem;
+    margin: auto 5px;
+  }
+  @media (max-width: 960px) {
+    padding: 0 20px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+`
 // ONLY ANIMATIONS
 
 const outOfWall = keyframes`
