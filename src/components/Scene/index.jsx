@@ -22,7 +22,7 @@ const Scene = ({screensize = 1}) => {
     <pointLight position={[10, 10, 10]}  />
     <Suspense  fallback={null}>
       <RoomsModel  scale={screensize} position={[0,1,0]}/>
-      <Environment files={'/hdr/brown_photostudio_02_2k.hdr'} />
+      <Environment files={'https://res.cloudinary.com/darvaxtkj/raw/upload/v1661997887/hdr/brown_photostudio_02_2k_whbl7d.hdr'} />
     </Suspense>
     <OrbitControls target={[0, 1, 0]} enabled={true} mouseButtons={{
 	LEFT: THREE.MOUSE.ROTATE,

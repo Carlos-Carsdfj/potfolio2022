@@ -56,12 +56,12 @@ function App(){
  <span style={{height:'300px', display:'block'}}></span>
   <section className='container' id='skills-section' >
   <Article1>
-  <ImageRender src='/assets/render1.png' alt='Skills' ></ImageRender>
-  <div><h2>Mis conocimientos</h2>
+  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/v1661997544/render2_nlzjyn.png' alt='Skills' ></ImageRender>
+  <div><h2>MIS CONOCIMIENTOS</h2>
   <p>
         Mis experiencas se basan en varios pequeños trabajos que he realizado en modo de aprendizaje autonomo
         al igual que en la suma de  muchas horas de lectura y   videos de varios creadores de contenido que concidero de muy buena   calidad. 
-        Mis experiencias me han llevado desde <strong>Html</strong>, <strong>Css</strong> , <strong>Javascript</strong>, Consumo de  <strong>APi Rest</strong> hasta <strong>React</strong>, 
+        Mi camino me ha llevado desde <strong>Html</strong>, <strong>Css</strong> , <strong>Javascript</strong>, Consumo de  <strong>APi Rest</strong> hasta <strong>React</strong>, 
         <strong>Node.js</strong>,  <strong>Next.js</strong>, <strong>Gatsby</strong>, <strong>GraphQl</strong>,       
   </p>
   </div>
@@ -71,7 +71,7 @@ function App(){
   <section className='container' id='social-section' >
   <Article2>
    
-    <div><h2>En todos lados</h2>
+    <div><h2>EN TODOS LADOS</h2>
   <p>
        Como el universo mismo, me encuentro en constante expancion de mis redes sociales, por cierto no necesito lentes pero a que si me quedan?
   </p>
@@ -80,7 +80,7 @@ function App(){
    <a href='mailto:cardfj@gmail.com' rel='nofollow noopener noreferrer' ><Gmail/></a> 
    <a href='https://www.linkedin.com/in/carlos-ferreira-jardin-799bb0145/' rel='nofollow noopener noreferrer' target='_blank'><Linkedin/></a>
   </div>
-  <ImageRender src='/assets/render2.png' alt='Skills' ></ImageRender>
+  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/v1661997563/socialMediasBackgroundTransparent2_eezppr.png' alt='Skills' ></ImageRender>
   </Article2>
   </section>
   <span style={{height:'300px', display:'block'}}></span>

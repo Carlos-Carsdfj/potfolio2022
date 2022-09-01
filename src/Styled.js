@@ -17,7 +17,6 @@ export const Loader = styled.span`
   height: 300px;
   color: white;
   z-index: 11;
-
   border-radius: 50%;
   box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5),
     inset 0 -40px 40px -20px rgba(255, 255, 255, 0.5);
@@ -150,21 +149,22 @@ export const Article = styled.article`
   display: grid;
   place-content: center;
   text-indent: 2rem;
-
   text-align: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   height: 100%;
   padding: 0 30px;
   @media (max-width: 960px) {
     padding: 0 20px;
   }
   & strong {
+    font-size: 1.6rem;
     position: relative;
-    color: #7c2ff8;
+    color: #f88c2f;
     text-shadow: 0 0 30px #ffffffb2;
   }
   & p {
+    font-size: 1.5rem;
     padding: 0 10px;
   }
 `
