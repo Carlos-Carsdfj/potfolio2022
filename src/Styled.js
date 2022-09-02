@@ -10,7 +10,7 @@ export const DivLoader = styled.div`
   background: transparent;
 `
 export const Loader = styled.span`
-  display: ${(props) => (props.isLoader ? 'grid' : 'none')};
+  display: grid;
   place-content: center;
   position: relative;
   width: 300px;
@@ -65,7 +65,6 @@ export const SceneDiv = styled.div`
   margin: auto;
   z-index: 5;
   position: relative;
-  opacity: 0;
   transition: opacity;
   transition-timing-function: ease;
   animation: ${(props) => (props.onanimation ? opacitytrans : 'none')} 2s linear

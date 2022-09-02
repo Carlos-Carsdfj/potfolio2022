@@ -1,16 +1,18 @@
 import { useRef, useEffect } from 'react'
 import useSize from './utils//useSize'
 import { useProgress } from '@react-three/drei'
-import { DivEffect,SceneDiv,  Loader, Nav, ListNav, ItemNav, DivLoader, Bg, Article2,  ImageRender, Article1 } from './Styled'
-import { Instagram, Twitter, Gmail, Linkedin } from './components/Svgs'
+import { DivEffect,SceneDiv, Nav, ListNav, ItemNav,  Bg, Article2,  ImageRender, Article1 } from '/src/Styled'
+import { Instagram, Twitter, Gmail, Linkedin, Github } from './components/Svgs'
 import  Scene  from './components/Scene'
 
 
 function App(){
   const target = useRef(null)
   const size = useSize(target)
-  const { progress, total, loaded } = useProgress()
-
+  const { errors, total, loaded } = useProgress()
+  if(errors.length>0){
+    console.log('ERROR :',errors)
+  }
   return (<>
   <Nav
   
@@ -33,17 +35,10 @@ function App(){
     </ListNav>
   </Nav>
   
-   <section className='container' >
-   {  <DivLoader>
-    <Loader loader={progress.toString().slice(0, 5)}  isLoader={total !== loaded} 
-    ><p>{Math.trunc(progress.toString())}%</p></Loader>
-    </DivLoader>}
+   <section className='container'>
     <SceneDiv 
       ref={target}
     onanimation={Boolean(total === loaded)}>
-
-
-  
       <Scene
       screensize={size?.width > 600? 1 : 0.5 }
       />
@@ -56,7 +51,7 @@ function App(){
  <span style={{height:'300px', display:'block'}}></span>
   <section className='container' id='skills-section' >
   <Article1>
-  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/v1661997544/render2_nlzjyn.png' alt='Skills' ></ImageRender>
+  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/w_600,h_600,c_scale/v1661997544/images/render2_nlzjyn.png' alt='Skills' ></ImageRender>
   <div><h2>MIS CONOCIMIENTOS</h2>
   <p>
         Mis experiencas se basan en varios pequeños trabajos que he realizado en modo de aprendizaje autonomo
@@ -79,8 +74,9 @@ function App(){
    <a href='https://twitter.com/ferreira_jardin/' rel='nofollow noopener noreferrer' target='_blank' ><Twitter/></a> 
    <a href='mailto:cardfj@gmail.com' rel='nofollow noopener noreferrer' ><Gmail/></a> 
    <a href='https://www.linkedin.com/in/carlos-ferreira-jardin-799bb0145/' rel='nofollow noopener noreferrer' target='_blank'><Linkedin/></a>
+   <a href='https://github.com/Carlos-Carsdfj' rel='nofollow noopener noreferrer' target='_blank'><Github/></a>
   </div>
-  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/v1661997563/socialMediasBackgroundTransparent2_eezppr.png' alt='Skills' ></ImageRender>
+  <ImageRender src='https://res.cloudinary.com/darvaxtkj/image/upload/w_600,h_600,c_scale/v1662120679/images/renderTransparent_a5stuf.png' alt='Skills' ></ImageRender>
   </Article2>
   </section>
   <span style={{height:'300px', display:'block'}}></span>

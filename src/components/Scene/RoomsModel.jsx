@@ -6,7 +6,7 @@ import * as THREE from 'three'
 export default function Model(props) {
   const maingroup = useRef()
   useFrame((state, delta) => (maingroup.current.rotation.y += 0.005))
-  const { nodes, materials } =useGLTF('https://res.cloudinary.com/darvaxtkj/image/upload/v1661996457/scene_lmp2nu.glb')
+  const { nodes, materials } =useGLTF('https://res.cloudinary.com/darvaxtkj/image/upload/v1661996457/models/scene_lmp2nu.glb')
   return (
     <group {...props}  dispose={null}>
     <group name="Scene" ref={maingroup} >
@@ -1867,4 +1867,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("https://res.cloudinary.com/darvaxtkj/image/upload/v1661996457/scene_lmp2nu.glb");
+useGLTF.preload("https://res.cloudinary.com/darvaxtkj/image/upload/v1661996457/models/scene_lmp2nu.glb");
