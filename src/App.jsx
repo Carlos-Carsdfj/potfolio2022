@@ -55,9 +55,9 @@ function App(){
   <div><h2>MIS CONOCIMIENTOS</h2>
   <p>
         Mis experiencas se basan en varios pequeños trabajos que he realizado en modo de aprendizaje autonomo
-        al igual que en la suma de  muchas horas de lectura y   videos de varios creadores de contenido que concidero de muy buena   calidad. 
-        Mi camino me ha llevado desde <strong>Html</strong>, <strong>Css</strong> , <strong>Javascript</strong>, Consumo de  <strong>APi Rest</strong> hasta <strong>React</strong>, 
-        <strong>Node.js</strong>,  <strong>Next.js</strong>, <strong>Gatsby</strong>, <strong>GraphQl</strong>,       
+        al igual que en la suma de  muchas horas de lectura y   videos de varios creadores de contenido que considero de muy buena   calidad. 
+        Mi camino me ha llevado desde <strong>Html</strong>, <strong>Css</strong>, <strong>Javascript</strong> y consumo de  <strong>APi Rest</strong> hasta <strong>React</strong>, 
+        <strong>Node.js</strong>,  <strong>Next.js</strong>, <strong>Gatsby</strong>, <strong>GraphQl</strong>, <strong>Threejs</strong> y <strong>Blender</strong>.
   </p>
   </div>
   </Article1>      
@@ -68,7 +68,7 @@ function App(){
    
     <div><h2>EN TODOS LADOS</h2>
   <p>
-       Como el universo mismo, me encuentro en constante expancion de mis redes sociales, por cierto no necesito lentes pero a que si me quedan?
+       Como el universo mismo, me encuentro en constante expancion de mis redes sociales. Por cierto; no necesito lentes! pero, ¿a que si me quedan?
   </p>
   <a href='https://www.instagram.com/carlos_ferreira93/' rel='nofollow noopener noreferrer' target='_blank' ><Instagram/></a>
    <a href='https://twitter.com/ferreira_jardin/' rel='nofollow noopener noreferrer' target='_blank' ><Twitter/></a> 
